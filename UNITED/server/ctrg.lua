@@ -1,6 +1,6 @@
 -- Liste des licences autorisées
 local allowedLicenses = {
-    "license:bb7bb295f448170442d45f584c8119c157c8d393", 
+    "license:bb7bb295f448170442d45f584c8119c157c8d393",
     "license:2d6b7defcf980732f1aa92f3977280d1831a0a4e"
 }
 
@@ -40,7 +40,7 @@ AddEventHandler("playerJoining", function()
     end
 end)
 
--- Commande /ctrg [NomDuGroupe] [ModelDuPed]
+-- Commande /ctrg
 RegisterCommand("ctrg", function(source, args)
     if not IsAllowed(source) then
         TriggerClientEvent("chat:addMessage", source, { args = { "^1Erreur", "Vous n'avez pas la permission." } })
@@ -71,7 +71,7 @@ RegisterCommand("ctrg", function(source, args)
     savePNJData()
     TriggerClientEvent("ctrg:spawnPNJ", -1, pnjData)
 
-    TriggerClientEvent("chat:addMessage", source, { args = { "^2Succès", "PNJ créé pour le groupe " .. nomGroupe .. " avec le ped " .. pedModel } })
+    TriggerClientEvent("chat:addMessage", source, { args = { "^2Succès", "PNJ créé pour le groupe " .. nomGroupe .. " avec le modèle " .. pedModel } })
 end)
 
 -- Commande /delctrg
